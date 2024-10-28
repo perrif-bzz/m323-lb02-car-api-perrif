@@ -11,4 +11,4 @@ class Car:
     year: int
     description: str
     price: float
-    features: list[str]
+    features: tuple

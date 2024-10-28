@@ -14,11 +14,19 @@ def get_all_cars():
     return jsonify([car.__dict__ for car in cars]), 200
 
 
+def format_car_description(car):
+    return f"{car.year} {car.make} {car.model} - {car.description} ({car.price}CHF)"
+
+
 @car_blueprint.route("/cars/<string:vin_nr>", methods=["GET"])
 def get_car(vin_nr):
     car = car_dao.get_car(vin_nr)
     if car:
-        return jsonify(car.__dict__), 200
+        formatted_description = format_car_description(car)
+        car_data = car.__dict__
+        car_data['formatted_description'] = formatted_description
+        print(car_data)
+        return jsonify(car_data), 200
     else:
         return jsonify({"message": "Car not found"}), 404
 

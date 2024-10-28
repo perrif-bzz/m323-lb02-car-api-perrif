@@ -24,7 +24,7 @@ def generate_testdata():
             year=1998,
             description="2.0l turbocharged inline 4 producing 220 hp.",
             price=25000,
-            features=["ABS", "Turbocharged", "5 speed manual", "Electronic seatbelts"],
+            features=("ABS", "Turbocharged", "5 speed manual", "Electronic seatbelts"),
         )
     )
     car_dao.add_car(
@@ -35,7 +35,7 @@ def generate_testdata():
             year=1994,
             description="3.0l twin-turbocharged inline 6 producing 328 hp.",
             price=35000,
-            features=["ABS", "Twin-Turbocharged", "6 speed manual"],
+            features=("ABS", "Twin-Turbocharged", "6 speed manual"),
         )
     )
     car_dao.add_car(
@@ -46,7 +46,7 @@ def generate_testdata():
             year=1992,
             description="1.8l naturally aspirated inline 4 producing 116 hp",
             price=15000,
-            features=["5 speed manual", "Hardtop / Soft top"],
+            features=("5 speed manual", "Hardtop / Soft top"),
         )
     )
 
