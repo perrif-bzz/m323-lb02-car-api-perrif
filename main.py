@@ -10,12 +10,12 @@ app.secret_key = "my_secret_key"
 
 app.register_blueprint(car_blueprint)
 
-
 def generate_testdata():
+    """Generate test data for car database."""
     car_dao = CarDao('car.db')
-
     car_dao.create_table()
 
+    # Test data creation
     car_dao.add_car(
         Car(
             vin_nr="11111",
@@ -49,9 +49,7 @@ def generate_testdata():
             features=("5 speed manual", "Hardtop / Soft top"),
         )
     )
-
     car_dao.close()
-
 
 if __name__ == "__main__":
     generate_testdata()
